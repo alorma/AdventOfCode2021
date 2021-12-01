@@ -21,5 +21,12 @@ class Day1SonarSweetTest {
 
         expectThat(result).isEqualTo(3)
     }
+
+    @Test
+    fun `should return 1557 when items are Day1Data adventItems`() {
+        val result = calculator.calculate(Day1Data.adventItems)
+
+        expectThat(result).isEqualTo(1557)
+    }
 }
 
