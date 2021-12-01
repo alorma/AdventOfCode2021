@@ -14,7 +14,6 @@ class Day1SonarSweetTest {
 
         expectThat(result).isEqualTo(2)
     }
-
     @Test
     fun `should return 3 calculatedSimple when items are 101 102 99 103 104`() {
         val result = calculator.calculateSimple(listOf(101, 102, 99, 103, 104))
@@ -28,5 +27,17 @@ class Day1SonarSweetTest {
 
         expectThat(result).isEqualTo(1557)
     }
-}
 
+    @Test
+    fun `should return 2 calculatedGrouped when items are 199 200 208 210 200 207 240 269 260 263`() {
+        val result = calculator.calculateGrouped(listOf(199, 200, 208, 210, 200, 207, 240, 269, 260, 263))
+
+        expectThat(result).isEqualTo(5)
+    }
+    @Test
+    fun `should return 1608 calculatedGrouped when items are Day1Data adventItems`() {
+        val result = calculator.calculateGrouped(Day1Data.adventItems)
+
+        expectThat(result).isEqualTo(1608)
+    }
+}

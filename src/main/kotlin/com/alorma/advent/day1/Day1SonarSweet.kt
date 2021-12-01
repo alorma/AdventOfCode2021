@@ -16,6 +16,11 @@ class Day1SonarSweet {
         return count
     }
 
+    fun calculateGrouped(items: List<Int>): Int {
+        val sums = items.windowed(3, 1) { window-> window.sum() }
+        return calculateSimple(sums)
+    }
+
 }
 
 fun main() {
