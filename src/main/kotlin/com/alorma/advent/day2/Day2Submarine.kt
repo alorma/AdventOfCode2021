@@ -8,10 +8,7 @@ class Day2Submarine {
         var depth = 0
         var horizontal = 0
 
-        val commands: List<Pair<String, Int>> = input.map { command ->
-            val commandParts = command.split(" ")
-            commandParts[0] to commandParts[1].toInt()
-        }
+        val commands: List<Pair<String, Int>> = parseInput(input)
 
         commands.forEach { (command, value) ->
             if (command == "forward") {
@@ -35,10 +32,7 @@ class Day2Submarine {
         var horizontal = 0
         var aim = 0
 
-        val commands: List<Pair<String, Int>> = input.map { command ->
-            val commandParts = command.split(" ")
-            commandParts[0] to commandParts[1].toInt()
-        }
+        val commands: List<Pair<String, Int>> = parseInput(input)
 
         commands.forEach { (command, value) ->
             if (command == "forward") {
@@ -54,6 +48,11 @@ class Day2Submarine {
         }
 
         return Position(depth = depth, horizontal = horizontal)
+    }
+
+    private fun parseInput(input: List<String>) = input.map { command ->
+        val commandParts = command.split(" ")
+        commandParts[0] to commandParts[1].toInt()
     }
 
     data class Position(val depth: Int, val horizontal: Int) {
