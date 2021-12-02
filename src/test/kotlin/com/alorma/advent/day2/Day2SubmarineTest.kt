@@ -21,6 +21,7 @@ class Day2SubmarineTest {
         expectThat(result) {
             get { depth }.isEqualTo(10)
             get { horizontal }.isEqualTo(15)
+            get { result.result() }.isEqualTo(150)
         }
     }
 
@@ -32,6 +33,28 @@ class Day2SubmarineTest {
             get { depth }.isEqualTo(927)
             get { horizontal }.isEqualTo(1850)
             get { result.result() }.isEqualTo(1714950)
+        }
+    }
+
+    @Test
+    fun `test data with aim should return 60 depth 15 horizontal`() {
+        val result = submarine.calculateWithAim(Day2Data.testItems)
+
+        expectThat(result) {
+            get { depth }.isEqualTo(60)
+            get { horizontal }.isEqualTo(15)
+            get { result.result() }.isEqualTo(900)
+        }
+    }
+
+    @Test
+    fun `advent data with aim should return 692961 depth 1850 horizontal`() {
+        val result = submarine.calculateWithAim(Day2Data.adventItems)
+
+        expectThat(result) {
+            get { depth }.isEqualTo(692961)
+            get { horizontal }.isEqualTo(1850)
+            get { result.result() }.isEqualTo(1281977850)
         }
     }
 }
