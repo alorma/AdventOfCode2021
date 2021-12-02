@@ -17,14 +17,7 @@ class Day1SonarSweet {
     }
 
     fun calculateGrouped(items: List<Int>): Int {
-        val sums = items.windowed(3, 1) { window-> window.sum() }
+        val sums = items.windowed(3, 1) { window -> window.sum() }
         return calculateSimple(sums)
     }
-
-}
-
-fun main() {
-    val calculator = Day1SonarSweet()
-    val result = calculator.calculateSimple(Day1Data.adventItems)
-    println(result)
 }

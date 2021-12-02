@@ -23,4 +23,15 @@ class Day2SubmarineTest {
             get { horizontal }.isEqualTo(15)
         }
     }
+
+    @Test
+    fun `advent data should return 927 depth 1850 horizontal`() {
+        val result = submarine.calculate(Day2Data.adventItems)
+
+        expectThat(result) {
+            get { depth }.isEqualTo(927)
+            get { horizontal }.isEqualTo(1850)
+            get { result.result() }.isEqualTo(1714950)
+        }
+    }
 }
